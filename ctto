@@ -16,8 +16,8 @@ local OrionLib = {
 		Default = {
 			Main = Color3.fromRGB(25, 25, 25),
 			Second = Color3.fromRGB(32, 32, 32),
-			Stroke = Color3.fromRGB(0, 255, 0),
-			Divider = Color3.fromRGB(60, 60, 60),
+			Stroke = Color3.fromRGB(60, 60, 60),
+			Divider = Color3.fromRGB(0, 51, 0),
 			Text = Color3.fromRGB(255, 255, 255),
 			TextDark = Color3.fromRGB(200, 200, 200)
 		}
@@ -653,7 +653,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		UIHidden = true
 		OrionLib:MakeNotification({
 			Name = "Closed",
-			Content = "Tap RightShift to reopen the interface",
+			Content = "Tap F6 to reopen the interface",
 			Image = "rbxassetid://14185199024",
 			Time = 5
 		})
@@ -661,7 +661,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	end)
 
 	AddConnection(UserInputService.InputBegan, function(Input)
-		if Input.KeyCode == Enum.KeyCode.RightShift and UIHidden then
+		if Input.KeyCode == Enum.KeyCode.F6 and UIHidden then
 			MainWindow.Visible = true
 		end
 	end)
